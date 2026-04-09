@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://u7qsup1v067"]
+
+[ext_resource type="PackedScene" uid="uid://djf0vtr1oc6rw" path="res://scenes/levels/temp_map/floorplan.tscn" id="1_36akw"]
+[ext_resource type="PackedScene" uid="uid://bemm8fv31vy4o" path="res://scenes/entities/player/player.tscn" id="1_kwqmd"]
+
+[node name="TempLevel" type="Node2D" unique_id=1812710011]
+
+[node name="Node2D" parent="." unique_id=780025789 instance=ExtResource("1_36akw")]
+position = Vector2(682.0541, 124.65607)
+
+[node name="player" parent="." unique_id=1094573775 instance=ExtResource("1_kwqmd")]
+position = Vector2(1303, 454)
+
+[node name="Camera2D" type="Camera2D" parent="player" unique_id=1147683386]
