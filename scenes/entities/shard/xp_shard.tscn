@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bl4jkf72i4bnl"]
+
+[ext_resource type="Texture2D" uid="uid://cpb1ngoge7f4q" path="res://icon.svg" id="1_shard"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ytly1"]
+radius = 5.0
+height = 12.0
+
+[node name="XPShard" type="Area2D" unique_id=57712637]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=223344556]
+texture = ExtResource("1_shard")
+scale = Vector2(0.05, 0.05)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=158016740]
+shape = SubResource("CapsuleShape2D_ytly1")

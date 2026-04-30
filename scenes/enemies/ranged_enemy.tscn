@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://cnuih7q527qp2"]
+
+[ext_resource type="Script" uid="uid://vdc535cyhmaw" path="res://scenes/enemies/msenemyranged.gd" id="1_d5ppq"]
+[ext_resource type="Texture2D" uid="uid://cpb1ngoge7f4q" path="res://icon.svg" id="1_k7uv6"]
+[ext_resource type="PackedScene" uid="uid://bw5dc3y67su67" path="res://scenes/enemies/hit_flash_animation.tscn" id="4_ksjnk"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ksjnk"]
+resource_local_to_scene = true
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dh385"]
+
+[node name="RangedEnemy" type="CharacterBody2D" unique_id=1096228373]
+collision_layer = 16
+collision_mask = 3
+script = ExtResource("1_d5ppq")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=538123171]
+material = SubResource("ShaderMaterial_ksjnk")
+position = Vector2(0, 1.9073486e-06)
+scale = Vector2(0.08921569, 0.09411765)
+texture = ExtResource("1_k7uv6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2131982685]
+shape = SubResource("CircleShape2D_dh385")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=292116857]
+
+[node name="Timer" type="Timer" parent="." unique_id=815181627]
+wait_time = 0.1
+autostart = true
+
+[node name="ProjectileSpawnPoint" type="Marker2D" parent="." unique_id=788337785]
+
+[node name="HitFlashAnimation" parent="." unique_id=466716065 instance=ExtResource("4_ksjnk")]
