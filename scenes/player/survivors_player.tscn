@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://5u1rnqptd37c"]
+
+[ext_resource type="Script" uid="uid://b6ch0amjmwbnk" path="res://scenes/player/survivors_player.gd" id="1_svhbj"]
+[ext_resource type="Texture2D" uid="uid://cpb1ngoge7f4q" path="res://icon.svg" id="2_4df5o"]
+[ext_resource type="PackedScene" uid="uid://evvkl3lupvty" path="res://scenes/ui/player_ui/survivors_player_ui.tscn" id="3_svhbj"]
+[ext_resource type="PackedScene" uid="uid://bf763uclhscq3" path="res://scenes/ui/player_ui/survivors_player_statistics_ui.tscn" id="4_qd1ta"]
+[ext_resource type="PackedScene" uid="uid://h4jnciefvexx" path="res://scenes/ui/leveling_ui/survivors_leveling_ui.tscn" id="5_0231p"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0231p"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_svhbj"]
+
+[node name="player" type="CharacterBody2D" unique_id=2090203247 groups=["player"]]
+collision_layer = 2
+collision_mask = 25
+motion_mode = 1
+script = ExtResource("1_svhbj")
+
+[node name="sprite" type="Sprite2D" parent="." unique_id=1992824168]
+texture = ExtResource("2_4df5o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=361383992]
+position = Vector2(0.5, 0)
+shape = SubResource("CircleShape2D_0231p")
+
+[node name="ExpPickupArea" type="Area2D" parent="." unique_id=897643987]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExpPickupArea" unique_id=987417652]
+shape = SubResource("CircleShape2D_svhbj")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1186688512]
+
+[node name="SurvivorsPlayerUI" parent="CanvasLayer" unique_id=1155891365 instance=ExtResource("3_svhbj")]
+
+[node name="SurvivorsPlayerStatistics" parent="CanvasLayer" unique_id=1005769826 instance=ExtResource("4_qd1ta")]
+
+[node name="SurvivorsLevelingUI" parent="CanvasLayer" unique_id=554883465 instance=ExtResource("5_0231p")]
+
+[connection signal="area_entered" from="ExpPickupArea" to="." method="_on_ExpPickupArea_area_entered"]
