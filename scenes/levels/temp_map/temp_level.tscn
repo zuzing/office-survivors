@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://u7qsup1v067"]
+[gd_scene format=4 uid="uid://u7qsup1v067"]
 
 [ext_resource type="PackedScene" uid="uid://djf0vtr1oc6rw" path="res://scenes/levels/temp_map/floorplan.tscn" id="1_36akw"]
 [ext_resource type="PackedScene" uid="uid://5u1rnqptd37c" path="res://scenes/player/survivors_player.tscn" id="2_36akw"]
