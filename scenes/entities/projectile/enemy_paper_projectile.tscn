@@ -1,0 +1,20 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" uid="uid://cjqs8srfbxb0i" path="res://scenes/weapons/paper_projectile.gd" id="1_enproj"]
+[ext_resource type="Texture2D" uid="uid://xyhkqaub47vd" path="res://assets/sprites/other/paperplane_48x48.png" id="2_enproj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_enproj"]
+radius = 4.0
+
+[node name="EnemyPaperProjectile" type="CharacterBody2D"]
+collision_layer = 64
+collision_mask = 3
+script = ExtResource("1_enproj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_enproj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = -3.3108895
+modulate = Color(1, 0, 0, 1)
+texture = ExtResource("2_enproj")

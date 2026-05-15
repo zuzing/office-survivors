@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="SurvivorsUpgrade" format=3 uid="uid://b2cvc335skosd"]
+
+[ext_resource type="Texture2D" uid="uid://cnyj11w8ngqrp" path="res://assets/sprites/skill_icons_by_quintino_pixels/48x48/skill_icons16.png" id="1_1fknj"]
+[ext_resource type="Script" uid="uid://cwq84jla5lnp6" path="res://scenes/resources/upgrade_resource.gd" id="1_maxhp"]
+
+[resource]
+script = ExtResource("1_maxhp")
+name = "Max Health Increase"
+icon = ExtResource("1_1fknj")
+description = "Improves your health by 10%"
+target_property = 0
+level_modifiers = Array[float]([0.1, 0.1, 0.1, 0.1])
+metadata/_custom_type_script = "uid://cwq84jla5lnp6"

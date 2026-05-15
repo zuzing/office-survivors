@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://mtb73inrvu0r"]
+
+[ext_resource type="Script" uid="uid://b5wvimpawnv7q" path="res://scenes/weapons/paper.gd" id="1_paper"]
+
+[node name="Paper" type="Marker2D"]
+script = ExtResource("1_paper")
+
+[node name="Timer" type="Timer" parent="."]

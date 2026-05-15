@@ -1,0 +1,126 @@
+[gd_scene load_steps=6 format=3 uid="uid://evvkl3lupvty"]
+
+[ext_resource type="Script" uid="uid://ccx1din4nfwk8" path="res://scenes/ui/player_ui/survivors_player_ui.gd" id="1_r4or0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_178ny"]
+bg_color = Color(0.3032328, 0.30323285, 0.30323276, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bibqr"]
+bg_color = Color(1, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eahry"]
+bg_color = Color(0.12357815, 0, 0.9304619, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fmpa6"]
+bg_color = Color(0.7412251, 0.73902535, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+
+[node name="SurvivorsPlayerUI" type="Control" node_paths=PackedStringArray("level", "health_bar", "shield_bar", "exp_bar")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 2
+size_flags_vertical = 2
+script = ExtResource("1_r4or0")
+level = NodePath("HBoxContainer/Level")
+health_bar = NodePath("HBoxContainer/VBoxContainer/HealthContainer/HealthProgressBar")
+shield_bar = NodePath("HBoxContainer/VBoxContainer/ShieldContainer/ShieldProgressBar")
+exp_bar = NodePath("HBoxContainer/VBoxContainer/ExpContainer/ExpProgressBar")
+metadata/_edit_use_anchors_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Level" type="Label" parent="HBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 38
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="HealthContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 2
+
+[node name="Health" type="Label" parent="HBoxContainer/VBoxContainer/HealthContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+text = "Życie"
+
+[node name="HealthProgressBar" type="ProgressBar" parent="HBoxContainer/VBoxContainer/HealthContainer"]
+custom_minimum_size = Vector2(190, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 15
+theme_override_styles/background = SubResource("StyleBoxFlat_178ny")
+theme_override_styles/fill = SubResource("StyleBoxFlat_bibqr")
+
+[node name="ShieldContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 2
+
+[node name="Shield" type="Label" parent="HBoxContainer/VBoxContainer/ShieldContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+text = "Tarcza"
+
+[node name="ShieldProgressBar" type="ProgressBar" parent="HBoxContainer/VBoxContainer/ShieldContainer"]
+custom_minimum_size = Vector2(190, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 15
+theme_override_styles/background = SubResource("StyleBoxFlat_178ny")
+theme_override_styles/fill = SubResource("StyleBoxFlat_eahry")
+
+[node name="ExpContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+alignment = 2
+
+[node name="Exp" type="Label" parent="HBoxContainer/VBoxContainer/ExpContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+text = "Postęp poziomu"
+
+[node name="ExpProgressBar" type="ProgressBar" parent="HBoxContainer/VBoxContainer/ExpContainer"]
+custom_minimum_size = Vector2(190, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 15
+theme_override_styles/background = SubResource("StyleBoxFlat_178ny")
+theme_override_styles/fill = SubResource("StyleBoxFlat_fmpa6")

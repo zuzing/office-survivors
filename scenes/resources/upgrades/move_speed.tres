@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="SurvivorsUpgrade" format=3 uid="uid://fvoe0b041ech"]
+
+[ext_resource type="Texture2D" uid="uid://0ninm6hcutw1" path="res://assets/sprites/skill_icons_by_quintino_pixels/48x48/skill_icons30.png" id="1_dxx38"]
+[ext_resource type="Script" uid="uid://cwq84jla5lnp6" path="res://scenes/resources/upgrade_resource.gd" id="1_movespeed"]
+
+[resource]
+script = ExtResource("1_movespeed")
+name = "Move Speed"
+icon = ExtResource("1_dxx38")
+description = "Increases move speed based on level of this upgrade (20%,15%,10%,8%,6%,3%)"
+target_property = 7
+level_modifiers = Array[float]([0.2, 0.15, 0.1, 0.08, 0.06, 0.03])
+metadata/_custom_type_script = "uid://cwq84jla5lnp6"

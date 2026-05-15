@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="SurvivorsUpgrade" format=3 uid="uid://dxupr1u0fruiq"]
+
+[ext_resource type="Script" uid="uid://cwq84jla5lnp6" path="res://scenes/resources/upgrade_resource.gd" id="1_maxshield"]
+[ext_resource type="Texture2D" uid="uid://d1j1u70wo4tpu" path="res://assets/sprites/skill_icons_by_quintino_pixels/48x48/skill_icons22.png" id="1_tndcs"]
+
+[resource]
+script = ExtResource("1_maxshield")
+name = "Max Shield Increase"
+icon = ExtResource("1_tndcs")
+description = "Increases your max shield by 5%"
+target_property = 1
+level_modifiers = Array[float]([0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05])
+metadata/_custom_type_script = "uid://cwq84jla5lnp6"

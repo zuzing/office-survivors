@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="SurvivorsEnemyResource" format=3 uid="uid://14cvd3t8gg3"]
+
+[ext_resource type="Script" uid="uid://c0kktvfopa2i0" path="res://scenes/resources/enemy_resource.gd" id="1_main"]
+[ext_resource type="Script" uid="uid://blfxlnx2xx6mb" path="res://scenes/enemies/enemy_resource.gd" id="2_stats"]
+[ext_resource type="PackedScene" uid="uid://o8pmp8ygslu8" path="res://scenes/enemies/default_enemy.tscn" id="3_scene"]
+
+[sub_resource type="Resource" id="EnemyRes_1"]
+script = ExtResource("2_stats")
+health = 30
+speed = 80.0
+
+[resource]
+script = ExtResource("1_main")
+enemy = ExtResource("3_scene")
+cost = 2
+enemy_resource = SubResource("EnemyRes_1")
+metadata/_custom_type_script = "uid://c0kktvfopa2i0"

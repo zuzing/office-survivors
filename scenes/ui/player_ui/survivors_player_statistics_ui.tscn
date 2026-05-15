@@ -1,0 +1,156 @@
+[gd_scene load_steps=2 format=3 uid="uid://bf763uclhscq3"]
+
+[ext_resource type="Script" uid="uid://b27blwroung1m" path="res://scenes/ui/player_ui/survivors_player_statistics_ui.gd" id="1_5b7y2"]
+
+[node name="SurvivorsPlayerStatistics" type="Control"]
+layout_mode = 3
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_right = 1.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+script = ExtResource("1_5b7y2")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+clip_contents = true
+layout_mode = 0
+offset_left = -165.0
+offset_right = -1.0
+offset_bottom = 185.0
+color = Color(0.18068737, 0.1851204, 0.18068841, 0.68235296)
+
+[node name="Statistics" type="VBoxContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -76.0
+offset_right = 76.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MaxHpRow" type="HBoxContainer" parent="ColorRect/Statistics"]
+layout_mode = 2
+
+[node name="MaxHpName" type="Label" parent="ColorRect/Statistics/MaxHpRow"]
+custom_minimum_size = Vector2(115, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = "Maks. Zdrowie"
+
+[node name="MaxHpValue" type="Label" parent="ColorRect/Statistics/MaxHpRow"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+
+[node name="MaxShieldRow" type="HBoxContainer" parent="ColorRect/Statistics"]
+layout_mode = 2
+
+[node name="MaxShieldName" type="Label" parent="ColorRect/Statistics/MaxShieldRow"]
+custom_minimum_size = Vector2(115, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = "Maks. Tarcza"
+
+[node name="MaxShieldValue" type="Label" parent="ColorRect/Statistics/MaxShieldRow"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+
+[node name="ArmorRow" type="HBoxContainer" parent="ColorRect/Statistics"]
+visible = false
+layout_mode = 2
+
+[node name="ArmorName" type="Label" parent="ColorRect/Statistics/ArmorRow"]
+visible = false
+custom_minimum_size = Vector2(115, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = "Pancerz"
+
+[node name="ArmorValue" type="Label" parent="ColorRect/Statistics/ArmorRow"]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+
+[node name="ExpGainMultiplierRow" type="HBoxContainer" parent="ColorRect/Statistics"]
+layout_mode = 2
+
+[node name="ExpGainMultiplierName" type="Label" parent="ColorRect/Statistics/ExpGainMultiplierRow"]
+custom_minimum_size = Vector2(115, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = "Mnożnik EXP"
+
+[node name="ExpGainMultiplierValue" type="Label" parent="ColorRect/Statistics/ExpGainMultiplierRow"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+
+[node name="DamageMultiplierRow" type="HBoxContainer" parent="ColorRect/Statistics"]
+layout_mode = 2
+
+[node name="DamageMultiplierName" type="Label" parent="ColorRect/Statistics/DamageMultiplierRow"]
+custom_minimum_size = Vector2(115, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = "Mnożnik Obrażeń"
+
+[node name="DamageMultiplierValue" type="Label" parent="ColorRect/Statistics/DamageMultiplierRow"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+
+[node name="AttackSpeedMultiplierRow" type="HBoxContainer" parent="ColorRect/Statistics"]
+layout_mode = 2
+
+[node name="AttackSpeedMutltiplierName" type="Label" parent="ColorRect/Statistics/AttackSpeedMultiplierRow"]
+custom_minimum_size = Vector2(115, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = "Szybkość Ataku"
+
+[node name="AttackSpeedMultiplierValue" type="Label" parent="ColorRect/Statistics/AttackSpeedMultiplierRow"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+
+[node name="AttackRangeMultiplierRow" type="HBoxContainer" parent="ColorRect/Statistics"]
+layout_mode = 2
+
+[node name="AttackRangeMultiplierName" type="Label" parent="ColorRect/Statistics/AttackRangeMultiplierRow"]
+custom_minimum_size = Vector2(115, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = "Zasięg Ataku"
+
+[node name="AttackRangeMultiplierValue" type="Label" parent="ColorRect/Statistics/AttackRangeMultiplierRow"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+
+[node name="MoveSpeedMultiplierRow" type="HBoxContainer" parent="ColorRect/Statistics"]
+layout_mode = 2
+
+[node name="MoveSpeedMultiplierName" type="Label" parent="ColorRect/Statistics/MoveSpeedMultiplierRow"]
+custom_minimum_size = Vector2(115, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = "Szybkość Ruchu"
+
+[node name="MoveSpeedMultiplierValue" type="Label" parent="ColorRect/Statistics/MoveSpeedMultiplierRow"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+
+[node name="ExpPickupMultiplierRow" type="HBoxContainer" parent="ColorRect/Statistics"]
+layout_mode = 2
+
+[node name="ExpPickupMultiplierName" type="Label" parent="ColorRect/Statistics/ExpPickupMultiplierRow"]
+custom_minimum_size = Vector2(115, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = "Zasięg zbierania"
+
+[node name="ExpPickupMultiplierValue" type="Label" parent="ColorRect/Statistics/ExpPickupMultiplierRow"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 11

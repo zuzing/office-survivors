@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bl4jkf72i4bnl"]
+
+[ext_resource type="Script" uid="uid://c4x8io8l0m816" path="res://scenes/entities/shard/xp_shard.gd" id="1_xpshard"]
+[ext_resource type="Texture2D" uid="uid://db7sawolipuma" path="res://assets/sprites/other/xpshard.png" id="2_c7eav"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ytly1"]
+radius = 15.0
+
+[node name="XPShard" type="Area2D" unique_id=57712637]
+script = ExtResource("1_xpshard")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=223344556]
+scale = Vector2(3, 3)
+texture = ExtResource("2_c7eav")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=158016740]
+scale = Vector2(0.275, 0.275)
+shape = SubResource("CapsuleShape2D_ytly1")
