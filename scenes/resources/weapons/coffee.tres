@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="WeaponResource" format=3 uid="uid://dga4e0nx4hc8s"]
+
+[ext_resource type="Script" uid="uid://dj281mbtm2opn" path="res://scenes/resources/weapon_resource.gd" id="1_coffee"]
+[ext_resource type="Texture2D" uid="uid://bdstekex8pk0g" path="res://assets/free-office-pixel-art/coffee-maker.png" id="2_coffee"]
+[ext_resource type="PackedScene" uid="uid://de3pl7puoqri2" path="res://scenes/weapons/coffee_projectile.tscn" id="3_coffee"]
+[ext_resource type="PackedScene" uid="uid://celdtc30kn0g6" path="res://scenes/weapons/coffee.tscn" id="4_coffee"]
+
+[resource]
+script = ExtResource("1_coffee")
+name = "Coffee Spill"
+icon = ExtResource("2_coffee")
+description = "Fling scalding coffee at your enemies"
+weapon_scene = ExtResource("4_coffee")
+projectile_scene = ExtResource("3_coffee")
+base_damage = 5.0
+base_cooldown = 4.0
+base_size = 5.0
+base_duration = 3.0
+level_upgrades = Array[Dictionary]([{"damage": 5.0}, {"duration": 1.0, "cooldown": -0.5}])
+metadata/_custom_type_script = "uid://dj281mbtm2opn"

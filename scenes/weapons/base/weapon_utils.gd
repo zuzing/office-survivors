@@ -2,7 +2,7 @@ extends Node
 class_name WeaponUtils
 
 static func get_nearest_enemy(from_position: Vector2, max_range: float = INF) -> Node2D:
-	var enemies = Engine.get_main_loop().root.get_tree().get_nodes_in_group("enemies")
+	var enemies = Engine.get_main_loop().get_nodes_in_group("enemies")
 	var nearest = null
 	var min_dist = INF
 	

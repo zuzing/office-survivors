@@ -227,7 +227,6 @@ func _update_max_hp_on_level_up() -> void:
 	var hp_mult: float = LEVEL_UP_MAX_HP_MULTIPLIERS[hp_mult_index]
 
 	multipliers.max_hp_multiplier += hp_mult
-	stats.hp += get_effective_max_hp()
 
 # ======================
 #  DEATH
@@ -338,14 +337,11 @@ func _instantiate_weapon_scene(weapon: WeaponResource) -> void:
 func add_upgrade(upgrade: SurvivorsUpgrade) -> void:
 	if upgrade == null:
 		return
-		
+
 	if not self.has_an_upgrade(upgrade):
 		upgrade_slots.append(upgrade)
-	
-	_level_up_upgrade(upgrade) # upgrades start at level 0
 
-	_apply_upgrade_effect(upgrade, upgrade.level)
-	_update_exp_pickup_radius()
+	_level_up_upgrade(upgrade)
 
 
 func has_a_weapon(weapon: WeaponResource) -> bool:

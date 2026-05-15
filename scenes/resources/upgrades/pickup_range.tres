@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="SurvivorsUpgrade" format=3 uid="uid://ct36isr8yxjfs"]
+
+[ext_resource type="Texture2D" uid="uid://cpb1ngoge7f4q" path="res://icon.svg" id="1_6p6le"]
+[ext_resource type="Script" uid="uid://cwq84jla5lnp6" path="res://scenes/resources/upgrade_resource.gd" id="1_pickuprange"]
+
+[resource]
+script = ExtResource("1_pickuprange")
+name = "Pickup Range"
+icon = ExtResource("1_6p6le")
+description = "Increases pick up range by 10%"
+target_property = 8
+level_modifiers = Array[float]([0.1, 0.1, 0.1, 0.1])
+metadata/_custom_type_script = "uid://cwq84jla5lnp6"

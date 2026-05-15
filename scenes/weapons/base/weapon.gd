@@ -22,8 +22,16 @@ func _attack()
 func _ready():
 	player = get_tree().get_first_node_in_group("player")
 	timer.timeout.connect(_on_timer_timeout)
-	
-	player.multipliers_changed.connect(update_stats)
+
+	# Wait one frame so the parent player node's _ready() has fully run,
+	# in case this weapon is a static child of the player scene.
+	await get_tree().process_frame
+
+	if not player:
+		player = get_tree().get_first_node_in_group("player")
+
+	if player:
+		player.multipliers_changed.connect(update_stats)
 	update_stats()
 
 func _on_timer_timeout() -> void:

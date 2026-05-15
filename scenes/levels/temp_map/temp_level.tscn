@@ -1,14 +1,47 @@
 [gd_scene format=3 uid="uid://u7qsup1v067"]
 
 [ext_resource type="PackedScene" uid="uid://djf0vtr1oc6rw" path="res://scenes/levels/temp_map/floorplan.tscn" id="1_36akw"]
-[ext_resource type="PackedScene" uid="uid://bemm8fv31vy4o" path="res://scenes/entities/player/player.tscn" id="1_kwqmd"]
+[ext_resource type="PackedScene" uid="uid://5u1rnqptd37c" path="res://scenes/player/survivors_player.tscn" id="2_36akw"]
+[ext_resource type="Script" uid="uid://diahi4wnma5xf" path="res://scenes/survivors_game_manager.gd" id="3_aptxp"]
+[ext_resource type="Script" uid="uid://d1yqqsktb3lij" path="res://scenes/player/stats/survivors_player_stats.gd" id="3_hkmr6"]
+[ext_resource type="Script" uid="uid://c0kktvfopa2i0" path="res://scenes/resources/enemy_resource.gd" id="4_134w4"]
+[ext_resource type="Script" uid="uid://dwourk1mael8q" path="res://scenes/player/stats/survivors_player_multipliers.gd" id="4_h3pmb"]
+[ext_resource type="Script" uid="uid://dj281mbtm2opn" path="res://scenes/resources/weapon_resource.gd" id="5_3oc5g"]
+[ext_resource type="Resource" uid="uid://14cvd3t8gg3" path="res://scenes/resources/enemies/basic_enemy.tres" id="5_3qy7c"]
+[ext_resource type="Resource" uid="uid://b0l11dgsght0y" path="res://scenes/resources/weapons/paper.tres" id="6_hkmr6"]
+
+[sub_resource type="Resource" id="Resource_dji0s"]
+script = ExtResource("3_hkmr6")
+hp = null
+shield = null
+exp_to_next_level = 10.0
+metadata/_custom_type_script = "uid://d1yqqsktb3lij"
+
+[sub_resource type="Resource" id="Resource_4jgpj"]
+script = ExtResource("4_h3pmb")
+metadata/_custom_type_script = "uid://dwourk1mael8q"
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_3qy7c"]
+vertices = PackedVector2Array(2053.0469, 134.96094, 2056.9375, 881.96094, 692.09375, 877.03125, 698.89844, 130.03125)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(689, 120, 682, 887, 2067, 892, 2063, 125)])
 
 [node name="TempLevel" type="Node2D" unique_id=1812710011]
 
-[node name="Node2D" parent="." unique_id=780025789 instance=ExtResource("1_36akw")]
+[node name="floorplan" parent="." unique_id=780025789 instance=ExtResource("1_36akw")]
 position = Vector2(682.0541, 124.65607)
 
-[node name="player" parent="." unique_id=1094573775 instance=ExtResource("1_kwqmd")]
-position = Vector2(1303, 454)
+[node name="player" parent="." unique_id=2090203247 instance=ExtResource("2_36akw")]
+base_stats = SubResource("Resource_dji0s")
+base_multipliers = SubResource("Resource_4jgpj")
+weapon_slots = Array[ExtResource("5_3oc5g")]([ExtResource("6_hkmr6")])
 
-[node name="Camera2D" type="Camera2D" parent="player" unique_id=1147683386]
+[node name="Camera2D" type="Camera2D" parent="player" unique_id=1175047714]
+
+[node name="SurvivorsGameManager" type="Node" parent="." unique_id=748244329]
+script = ExtResource("3_aptxp")
+enemy_list = Array[ExtResource("4_134w4")]([ExtResource("5_3qy7c")])
+metadata/_custom_type_script = "uid://diahi4wnma5xf"
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=1802882289]
+navigation_polygon = SubResource("NavigationPolygon_3qy7c")

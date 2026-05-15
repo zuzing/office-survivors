@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://34am82tctp21"]
+
+[ext_resource type="Texture2D" uid="uid://cpb1ngoge7f4q" path="res://icon.svg" id="1_dnk4x"]
+
+[sub_resource type="GDScript" id="GDScript_dnk4x"]
+script/source = "extends Area2D
+
+var glitch_scene: PackedScene
+var target_pos: Vector2
+var damage: float
+var duration: float
+var area_size: float
+
+var t: float = 0.0
+var start_pos: Vector2
+
+func _ready() -> void:
+	start_pos = global_position
+
+func _physics_process(delta: float) -> void:
+	t += delta * 2.0
+
+	global_position = start_pos.lerp(target_pos, t)
+
+	if t >= 1.0:
+		_explode()
+
+func _explode() -> void:
+	if glitch_scene:
+		var zone = glitch_scene.instantiate()
+		zone.global_position = global_position
+		zone.damage = damage
+		zone.duration = duration
+		zone.scale = Vector2.ONE * area_size
+		get_tree().current_scene.add_child(zone)
+
+	queue_free()
+"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_coffeeproj"]
+
+[node name="CoffeeProjectile" type="Area2D" unique_id=1528278677]
+collision_layer = 64
+collision_mask = 16
+script = SubResource("GDScript_dnk4x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=615604076]
+shape = SubResource("CircleShape2D_coffeeproj")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1112254406]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_dnk4x")
