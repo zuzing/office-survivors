@@ -1,14 +1,56 @@
 [gd_scene format=3 uid="uid://5u1rnqptd37c"]
 
 [ext_resource type="Script" uid="uid://b6ch0amjmwbnk" path="res://scenes/player/survivors_player.gd" id="1_svhbj"]
-[ext_resource type="Texture2D" uid="uid://cpb1ngoge7f4q" path="res://icon.svg" id="2_4df5o"]
+[ext_resource type="Texture2D" uid="uid://x6kpgqm1fuhr" path="res://assets/Modern tiles_Free/Characters_free/Amelia_idle_16x16.png" id="2_4df5o"]
 [ext_resource type="PackedScene" uid="uid://evvkl3lupvty" path="res://scenes/ui/player_ui/survivors_player_ui.tscn" id="3_svhbj"]
 [ext_resource type="PackedScene" uid="uid://bf763uclhscq3" path="res://scenes/ui/player_ui/survivors_player_statistics_ui.tscn" id="4_qd1ta"]
 [ext_resource type="PackedScene" uid="uid://h4jnciefvexx" path="res://scenes/ui/leveling_ui/survivors_leveling_ui.tscn" id="5_0231p"]
+[ext_resource type="Shader" uid="uid://dtcqkmtchuv2j" path="res://scenes/shaders/hit_flash.gdshader" id="6_shader"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0231p"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_svhbj"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_player"]
+resource_local_to_scene = true
+shader = ExtResource("6_shader")
+
+[sub_resource type="Animation" id="Animation_player_flash"]
+resource_name = "hit_flash"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:material:shader_parameter/hit_flash_on")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_player_reset"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:material:shader_parameter/hit_flash_on")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_player"]
+_data = {
+&"RESET": SubResource("Animation_player_reset"),
+&"hit_flash": SubResource("Animation_player_flash")
+}
 
 [node name="player" type="CharacterBody2D" unique_id=2090203247 groups=["player"]]
 collision_layer = 2
@@ -17,7 +59,12 @@ motion_mode = 1
 script = ExtResource("1_svhbj")
 
 [node name="sprite" type="Sprite2D" parent="." unique_id=1992824168]
+material = SubResource("ShaderMaterial_player")
+scale = Vector2(6, 6)
+flip_h = true
 texture = ExtResource("2_4df5o")
+hframes = 4
+frame = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=361383992]
 position = Vector2(0.5, 0)
@@ -35,5 +82,10 @@ shape = SubResource("CircleShape2D_svhbj")
 [node name="SurvivorsPlayerStatistics" parent="CanvasLayer" unique_id=1005769826 instance=ExtResource("4_qd1ta")]
 
 [node name="SurvivorsLevelingUI" parent="CanvasLayer" unique_id=554883465 instance=ExtResource("5_0231p")]
+
+[node name="HitFlashAnimation" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_player")
+}
 
 [connection signal="area_entered" from="ExpPickupArea" to="." method="_on_ExpPickupArea_area_entered"]

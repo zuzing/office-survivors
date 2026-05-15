@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://o8pmp8ygslu8"]
 
-[ext_resource type="Texture2D" uid="uid://cpb1ngoge7f4q" path="res://icon.svg" id="1_8mmhq"]
 [ext_resource type="Script" uid="uid://b80xl3cg6nsd6" path="res://scenes/enemies/default_enemy.gd" id="1_q3ymh"]
+[ext_resource type="Texture2D" uid="uid://bukrgornr2f3i" path="res://assets/Modern tiles_Free/Characters_free/Bob_idle_16x16.png" id="2_bob"]
+[ext_resource type="Shader" uid="uid://dtcqkmtchuv2j" path="res://scenes/shaders/hit_flash.gdshader" id="3_shader"]
 [ext_resource type="PackedScene" uid="uid://bw5dc3y67su67" path="res://scenes/enemies/hit_flash_animation.tscn" id="4_u1say"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hjtks"]
@@ -9,6 +10,7 @@ radius = 20.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_u1say"]
 resource_local_to_scene = true
+shader = ExtResource("3_shader")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_j4qqm"]
 radius = 22.0
@@ -26,9 +28,10 @@ shape = SubResource("CircleShape2D_hjtks")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1597861895]
 material = SubResource("ShaderMaterial_u1say")
-position = Vector2(0, 1.9073486e-06)
-scale = Vector2(0.8, 0.8)
-texture = ExtResource("1_8mmhq")
+position = Vector2(0, -8)
+scale = Vector2(6, 6)
+texture = ExtResource("2_bob")
+hframes = 4
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1674149122]
 

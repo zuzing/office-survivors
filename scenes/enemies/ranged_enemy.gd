@@ -18,7 +18,7 @@ func _ready() -> void:
 		add_child(projectile_spawn_point)
 
 	if not resource.projectile_scene:
-		var default_path = "res://scenes/entities/projectile/enemy_projectile.tscn"
+		var default_path = "res://scenes/entities/projectile/enemy_paper_projectile.tscn"
 		if ResourceLoader.exists(default_path):
 			resource.projectile_scene = load(default_path)
 

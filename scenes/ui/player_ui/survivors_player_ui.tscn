@@ -60,9 +60,9 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Level" type="Label" parent="HBoxContainer"]
-custom_minimum_size = Vector2(40, 0)
+custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 38
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -76,15 +76,15 @@ alignment = 2
 
 [node name="Health" type="Label" parent="HBoxContainer/VBoxContainer/HealthContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 15
 text = "Życie"
 
 [node name="HealthProgressBar" type="ProgressBar" parent="HBoxContainer/VBoxContainer/HealthContainer"]
-custom_minimum_size = Vector2(150, 0)
+custom_minimum_size = Vector2(190, 0)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 1
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 15
 theme_override_styles/background = SubResource("StyleBoxFlat_178ny")
 theme_override_styles/fill = SubResource("StyleBoxFlat_bibqr")
 
@@ -94,15 +94,15 @@ alignment = 2
 
 [node name="Shield" type="Label" parent="HBoxContainer/VBoxContainer/ShieldContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 15
 text = "Tarcza"
 
 [node name="ShieldProgressBar" type="ProgressBar" parent="HBoxContainer/VBoxContainer/ShieldContainer"]
-custom_minimum_size = Vector2(150, 0)
+custom_minimum_size = Vector2(190, 0)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 1
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 15
 theme_override_styles/background = SubResource("StyleBoxFlat_178ny")
 theme_override_styles/fill = SubResource("StyleBoxFlat_eahry")
 
@@ -113,14 +113,14 @@ alignment = 2
 
 [node name="Exp" type="Label" parent="HBoxContainer/VBoxContainer/ExpContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 15
 text = "Postęp poziomu"
 
 [node name="ExpProgressBar" type="ProgressBar" parent="HBoxContainer/VBoxContainer/ExpContainer"]
-custom_minimum_size = Vector2(150, 0)
+custom_minimum_size = Vector2(190, 0)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 1
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 15
 theme_override_styles/background = SubResource("StyleBoxFlat_178ny")
 theme_override_styles/fill = SubResource("StyleBoxFlat_fmpa6")

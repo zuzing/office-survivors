@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://34am82tctp21"]
 
-[ext_resource type="Texture2D" uid="uid://cpb1ngoge7f4q" path="res://icon.svg" id="1_dnk4x"]
+[ext_resource type="Texture2D" uid="uid://do0g6bpj7vf2d" path="res://assets/sprites/FREE Pixel Art Bar and Cafe Items Pack/Coffe Pot.png" id="1_dnk4x"]
 
 [sub_resource type="GDScript" id="GDScript_dnk4x"]
 script/source = "extends Area2D
@@ -48,5 +48,5 @@ script = SubResource("GDScript_dnk4x")
 shape = SubResource("CircleShape2D_coffeeproj")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1112254406]
-scale = Vector2(0.1, 0.1)
+scale = Vector2(3, 3)
 texture = ExtResource("1_dnk4x")

@@ -39,12 +39,15 @@ func _clear_enemies_to_spawn():
 		enemy_counts[i] = 0
 	
 func _buy_enemies():
-	for i in range(enemy_list.size()):
-		assert(enemy_list[i].cost >= 0, "ERROR: Enemy cost must be greater than 0")
-		while budget >= enemy_list[i].cost:
-			enemy_counts[i] += 1
-			budget -= enemy_list[i].cost
-			
+	var remaining := budget
+	var affordable := enemy_list.filter(func(e): return e.cost <= remaining)
+
+	while affordable.size() > 0:
+		var pick: SurvivorsEnemyResource = affordable[randi() % affordable.size()]
+		enemy_counts[enemy_list.find(pick)] += 1
+		remaining -= pick.cost
+		affordable = enemy_list.filter(func(e): return e.cost <= remaining)
+
 	_spawn_enemies()
 			
 	

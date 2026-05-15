@@ -1,11 +1,15 @@
 [gd_scene format=3 uid="uid://cnuih7q527qp2"]
 
-[ext_resource type="Script" uid="uid://vdc535cyhmaw" path="res://scenes/enemies/msenemyranged.gd" id="1_d5ppq"]
-[ext_resource type="Texture2D" uid="uid://cpb1ngoge7f4q" path="res://icon.svg" id="1_k7uv6"]
+[ext_resource type="Script" uid="uid://vdc535cyhmaw" path="res://scenes/enemies/ranged_enemy.gd" id="1_d5ppq"]
+[ext_resource type="Texture2D" uid="uid://r7a7h1ifg84f" path="res://assets/free-office-pixel-art/Julia-Idle.png" id="1_k7uv6"]
+[ext_resource type="Shader" uid="uid://dtcqkmtchuv2j" path="res://scenes/shaders/hit_flash.gdshader" id="2_shader"]
 [ext_resource type="PackedScene" uid="uid://bw5dc3y67su67" path="res://scenes/enemies/hit_flash_animation.tscn" id="4_ksjnk"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ksjnk"]
 resource_local_to_scene = true
+shader = ExtResource("2_shader")
+shader_parameter/hitflash_color = Vector4(1, 1, 1, 1)
+shader_parameter/hit_flash_on = false
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dh385"]
 radius = 20.0
@@ -17,8 +21,10 @@ script = ExtResource("1_d5ppq")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=538123171]
 material = SubResource("ShaderMaterial_ksjnk")
+position = Vector2(0, -8)
+scale = Vector2(3.5, 3.5)
 texture = ExtResource("1_k7uv6")
-scale = Vector2(0.5, 0.5)
+hframes = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2131982685]
 shape = SubResource("CircleShape2D_dh385")

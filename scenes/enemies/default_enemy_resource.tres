@@ -1,17 +1,15 @@
-[gd_resource type="Resource" script_class="EnemyResource" load_steps=3 format=3 uid="uid://dsrs88lllbatl"]
+[gd_resource type="Resource" script_class="EnemyResource" format=3 uid="uid://dsrs88lllbatl"]
 
 [ext_resource type="Script" uid="uid://blfxlnx2xx6mb" path="res://scenes/enemies/enemy_resource.gd" id="1_enemy"]
-[ext_resource type="PackedScene" uid="uid://bqne3c1d2wk4h" path="res://scenes/entities/projectile/enemy_projectile.tscn" id="2_enemy"]
+[ext_resource type="PackedScene" path="res://scenes/entities/projectile/enemy_paper_projectile.tscn" id="2_enemy"]
 
 [resource]
 script = ExtResource("1_enemy")
 health = 35
 exp_reward = 1
 attack_cooldown = 2.0
-contact_damage = 10
 speed = 160.0
 attack_range = 300.0
-min_attack_range = 120.0
 attack_damage = 8
 projectile_speed = 250.0
 projectile_scene = ExtResource("2_enemy")

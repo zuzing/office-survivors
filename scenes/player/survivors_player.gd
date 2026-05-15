@@ -81,9 +81,9 @@ func _handle_movement(_delta: float) -> void:
 		last_facing_direction = character_direction
 
 	if character_direction.x > 0:
-		$sprite.flip_h = true
-	elif character_direction.x < 0:
 		$sprite.flip_h = false
+	elif character_direction.x < 0:
+		$sprite.flip_h = true
 
 	if character_direction:
 		var effective_speed: float = movement_speed * multipliers.move_speed_multiplier
@@ -121,6 +121,7 @@ func get_effective_max_shield() -> float:
 # ======================
 
 func take_damage(amount: float) -> void:
+	$HitFlashAnimation.play("hit_flash")
 	time_since_last_damage = 0.0
 	var final_damage: float = _apply_armor(amount)
 	final_damage = _apply_shield(final_damage)
