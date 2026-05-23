@@ -237,6 +237,11 @@ func die() -> void:
 	player_died.emit(self)
 
 
+func add_kill(score_value: int = 10) -> void:
+	stats.score += score_value
+	_update_ui()
+
+
 # ======================
 #  SHIELD RECHARGE
 # ======================

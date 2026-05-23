@@ -7,9 +7,9 @@
 
 [resource]
 script = ExtResource("1_coffee")
-name = "Coffee Spill"
+name = "Rozlana Kawa"
 icon = ExtResource("1_aa7sw")
-description = "Fling scalding coffee at your enemies"
+description = "Ciśnij wrzącą kawą we wrogów"
 weapon_scene = ExtResource("4_coffee")
 projectile_scene = ExtResource("3_coffee")
 base_damage = 5.0

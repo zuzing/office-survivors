@@ -5,9 +5,9 @@
 
 [resource]
 script = ExtResource("1_maxshield")
-name = "Max Shield Increase"
+name = "Wzrost Tarczy"
 icon = ExtResource("1_tndcs")
-description = "Increases your max shield by 5%"
+description = "Zwiększa maksymalną tarczę o 5%"
 target_property = 1
 level_modifiers = Array[float]([0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05])
 metadata/_custom_type_script = "uid://cwq84jla5lnp6"

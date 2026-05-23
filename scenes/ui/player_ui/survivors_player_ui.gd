@@ -4,6 +4,7 @@ extends Control
 @export var health_bar: ProgressBar
 @export var shield_bar: ProgressBar
 @export var exp_bar: ProgressBar
+@export var score_label: Label
 
 func update_stats(player: Player) -> void:
 	var stats: SurvivorStats = player.stats
@@ -22,3 +23,6 @@ func update_stats(player: Player) -> void:
 	if exp_bar:
 		exp_bar.max_value = stats.exp_to_next_level
 		exp_bar.value = stats.current_exp
+
+	if score_label:
+		score_label.text = str(stats.score)

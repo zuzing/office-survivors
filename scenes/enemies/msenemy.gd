@@ -52,7 +52,15 @@ func take_damage(damage: int) -> void:
 	if current_health <= 0:
 		_die()
 
+const SCORE_BY_SHARD := {
+	EnemyResource.XPShard.LOW: 10,
+	EnemyResource.XPShard.MEDIUM: 25,
+	EnemyResource.XPShard.HIGH: 50
+}
+
 func _die() -> void:
+	if player and player.has_method("add_kill"):
+		player.add_kill(SCORE_BY_SHARD.get(resource.exp_reward, 10))
 	_drop_xp_shard()
 	queue_free()
 

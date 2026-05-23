@@ -48,7 +48,7 @@ base_multipliers = SubResource("Resource_4jgpj")
 weapon_slots = Array[ExtResource("5_3oc5g")]([ExtResource("6_hkmr6"), ExtResource("7_dji0s")])
 
 [node name="Camera2D" type="Camera2D" parent="player" unique_id=1175047714]
-position = Vector2(1, 0)
+position = Vector2(-79, 49)
 zoom = Vector2(0.75, 0.75)
 
 [node name="SurvivorsGameManager" type="Node" parent="." unique_id=748244329]

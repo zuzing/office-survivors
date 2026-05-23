@@ -19,3 +19,5 @@ class_name SurvivorStats
 @export_group("Miscellaneous")
 @export var move_speed: float = 1.0          # base move speed factor (can be 1.0)
 @export var exp_pickup_radius: float = 64.0  # base pickup radius, if you want it stored here
+
+var score: int = 0

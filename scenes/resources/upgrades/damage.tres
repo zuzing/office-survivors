@@ -5,8 +5,8 @@
 
 [resource]
 script = ExtResource("1_damage")
-name = "Damage Increase"
+name = "Wzrost Obrażeń"
 icon = ExtResource("1_4nb23")
-description = "Increases damage based on level of this upgrade (3%,5%,8%,15%)"
+description = "Zwiększa obrażenia zależnie od poziomu ulepszenia (3%,5%,8%,15%)"
 level_modifiers = Array[float]([0.03, 0.05, 0.08, 0.15])
 metadata/_custom_type_script = "uid://cwq84jla5lnp6"
