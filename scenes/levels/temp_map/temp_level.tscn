@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://u7qsup1v067"]
+[gd_scene format=3 uid="uid://u7qsup1v067"]
 
 [ext_resource type="PackedScene" uid="uid://djf0vtr1oc6rw" path="res://scenes/levels/temp_map/floorplan.tscn" id="1_36akw"]
 [ext_resource type="PackedScene" uid="uid://5u1rnqptd37c" path="res://scenes/player/survivors_player.tscn" id="2_36akw"]
@@ -33,21 +33,22 @@ enemy_resource = ExtResource("11_dji0s")
 metadata/_custom_type_script = "uid://c0kktvfopa2i0"
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_3qy7c"]
-vertices = PackedVector2Array(2053.0469, 134.96094, 2056.9375, 881.96094, 692.09375, 877.03125, 698.89844, 130.03125)
+vertices = PackedVector2Array(5637.922, 2457.9688, 662.15625, 2445.0234, 698.85156, 129.14844, 5618.0703, -310.0703)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(689, 120, 682, 887, 2067, 892, 2063, 125)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(689, 120, 652, 2455, 5648, 2468, 5628, -321)])
 
 [node name="TempLevel" type="Node2D" unique_id=1812710011]
 
-[node name="floorplan" parent="." unique_id=780025789 instance=ExtResource("1_36akw")]
-position = Vector2(682.0541, 124.65607)
+[node name="level" parent="." unique_id=1477138679 instance=ExtResource("1_36akw")]
 
 [node name="player" parent="." unique_id=2090203247 instance=ExtResource("2_36akw")]
+position = Vector2(0, 1287)
 base_stats = SubResource("Resource_dji0s")
 base_multipliers = SubResource("Resource_4jgpj")
 weapon_slots = Array[ExtResource("5_3oc5g")]([ExtResource("6_hkmr6"), ExtResource("7_dji0s")])
 
 [node name="Camera2D" type="Camera2D" parent="player" unique_id=1175047714]
+position = Vector2(1, 0)
 zoom = Vector2(0.75, 0.75)
 
 [node name="SurvivorsGameManager" type="Node" parent="." unique_id=748244329]
@@ -56,4 +57,5 @@ enemy_list = Array[ExtResource("4_134w4")]([ExtResource("5_3qy7c"), SubResource(
 metadata/_custom_type_script = "uid://diahi4wnma5xf"
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=1802882289]
+position = Vector2(-2999, 234)
 navigation_polygon = SubResource("NavigationPolygon_3qy7c")
