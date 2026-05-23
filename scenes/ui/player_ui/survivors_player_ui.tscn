@@ -38,7 +38,7 @@ border_width_bottom = 2
 border_color = Color(0, 0, 0, 1)
 border_blend = true
 
-[node name="SurvivorsPlayerUI" type="Control" node_paths=PackedStringArray("level", "health_bar", "shield_bar", "exp_bar")]
+[node name="SurvivorsPlayerUI" type="Control" node_paths=PackedStringArray("level", "health_bar", "shield_bar", "exp_bar", "score_label")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -52,6 +52,7 @@ level = NodePath("HBoxContainer/Level")
 health_bar = NodePath("HBoxContainer/VBoxContainer/HealthContainer/HealthProgressBar")
 shield_bar = NodePath("HBoxContainer/VBoxContainer/ShieldContainer/ShieldProgressBar")
 exp_bar = NodePath("HBoxContainer/VBoxContainer/ExpContainer/ExpProgressBar")
+score_label = NodePath("ScoreLabel")
 metadata/_edit_use_anchors_ = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
@@ -124,3 +125,20 @@ size_flags_vertical = 1
 theme_override_font_sizes/font_size = 15
 theme_override_styles/background = SubResource("StyleBoxFlat_178ny")
 theme_override_styles/fill = SubResource("StyleBoxFlat_fmpa6")
+
+[node name="ScoreLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_top = 0.0
+anchor_right = 0.5
+anchor_bottom = 0.0
+offset_left = -150.0
+offset_top = 12.0
+offset_right = 150.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 1
+theme_override_font_sizes/font_size = 42
+horizontal_alignment = 1
+text = "0"

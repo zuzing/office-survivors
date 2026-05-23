@@ -5,9 +5,9 @@
 
 [resource]
 script = ExtResource("1_maxhp")
-name = "Max Health Increase"
+name = "Wzrost Zdrowia"
 icon = ExtResource("1_1fknj")
-description = "Improves your health by 10%"
+description = "Zwiększa maksymalne zdrowie o 10%"
 target_property = 0
 level_modifiers = Array[float]([0.1, 0.1, 0.1, 0.1])
 metadata/_custom_type_script = "uid://cwq84jla5lnp6"

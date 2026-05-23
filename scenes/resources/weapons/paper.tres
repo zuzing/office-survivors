@@ -7,8 +7,9 @@
 
 [resource]
 script = ExtResource("1_paper")
+name = "Samolot z Papieru"
 icon = ExtResource("1_wuoaq")
-description = "Fold and throw paper planes at your coworkers"
+description = "Składaj i rzucaj samolotami w koleżanki i kolegów z pracy"
 weapon_scene = ExtResource("4_paper")
 projectile_scene = ExtResource("3_paper")
 base_damage = 20.0

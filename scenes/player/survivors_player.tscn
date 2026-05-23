@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://bf763uclhscq3" path="res://scenes/ui/player_ui/survivors_player_statistics_ui.tscn" id="4_qd1ta"]
 [ext_resource type="PackedScene" uid="uid://h4jnciefvexx" path="res://scenes/ui/leveling_ui/survivors_leveling_ui.tscn" id="5_0231p"]
 [ext_resource type="Shader" uid="uid://dtcqkmtchuv2j" path="res://scenes/shaders/hit_flash.gdshader" id="6_shader"]
+[ext_resource type="PackedScene" uid="uid://c6bh4ns62el8a" path="res://scenes/ui/death_screen.tscn" id="7_death"]
+[ext_resource type="PackedScene" path="res://scenes/ui/pause_menu/pause_menu.tscn" id="8_pause"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0231p"]
 
@@ -82,6 +84,10 @@ shape = SubResource("CircleShape2D_svhbj")
 [node name="SurvivorsPlayerStatistics" parent="CanvasLayer" unique_id=1005769826 instance=ExtResource("4_qd1ta")]
 
 [node name="SurvivorsLevelingUI" parent="CanvasLayer" unique_id=554883465 instance=ExtResource("5_0231p")]
+
+[node name="DeathScreen" parent="CanvasLayer" unique_id=2024052301 instance=ExtResource("7_death")]
+
+[node name="PauseMenu" parent="CanvasLayer" unique_id=2024052302 instance=ExtResource("8_pause")]
 
 [node name="HitFlashAnimation" type="AnimationPlayer" parent="."]
 libraries = {

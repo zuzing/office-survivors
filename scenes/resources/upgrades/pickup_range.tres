@@ -5,9 +5,9 @@
 
 [resource]
 script = ExtResource("1_pickuprange")
-name = "Pickup Range"
+name = "Zasięg Zbierania"
 icon = ExtResource("1_6p6le")
-description = "Increases pick up range by 10%"
+description = "Zwiększa zasięg zbierania przedmiotów o 10%"
 target_property = 8
 level_modifiers = Array[float]([0.1, 0.1, 0.1, 0.1])
 metadata/_custom_type_script = "uid://cwq84jla5lnp6"

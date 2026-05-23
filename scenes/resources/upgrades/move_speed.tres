@@ -5,9 +5,9 @@
 
 [resource]
 script = ExtResource("1_movespeed")
-name = "Move Speed"
+name = "Szybkość Ruchu"
 icon = ExtResource("1_dxx38")
-description = "Increases move speed based on level of this upgrade (20%,15%,10%,8%,6%,3%)"
+description = "Zwiększa szybkość ruchu zależnie od poziomu ulepszenia (20%,15%,10%,8%,6%,3%)"
 target_property = 7
 level_modifiers = Array[float]([0.2, 0.15, 0.1, 0.08, 0.06, 0.03])
 metadata/_custom_type_script = "uid://cwq84jla5lnp6"
